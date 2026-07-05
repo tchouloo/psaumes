@@ -4,19 +4,20 @@
    ============================================================ */
 
 :root {
-  --night-1: #0b0e1d;
-  --night-2: #141830;
-  --night-3: #1d2240;
-  --ink: #e9e4d8;
-  --ink-soft: #b9b3a4;
-  --ink-faint: #7d7869;
-  --gold: #d4af6a;
-  --gold-soft: #a8894f;
-  --rose: #c98a94;
-  --error: #d98181;
-  --card: rgba(255, 255, 255, 0.035);
-  --card-border: rgba(212, 175, 106, 0.18);
+  --night-1: #272b52;
+  --night-2: #343a6b;
+  --night-3: #444b88;
+  --ink: #f6f1e4;
+  --ink-soft: #d6cfba;
+  --ink-faint: #a49d8a;
+  --gold: #eac783;
+  --gold-soft: #c8a660;
+  --rose: #e8adb8;
+  --error: #eda0a0;
+  --card: rgba(255, 255, 255, 0.06);
+  --card-border: rgba(234, 199, 133, 0.3);
   --serif: "Cormorant Garamond", Georgia, "Times New Roman", serif;
+  --script: "Great Vibes", "Segoe Script", cursive;
 }
 
 * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -25,7 +26,11 @@ html { scroll-behavior: smooth; }
 
 body {
   font-family: var(--serif);
-  background: radial-gradient(ellipse at 50% -20%, var(--night-3) 0%, var(--night-2) 45%, var(--night-1) 100%) fixed;
+  font-size: 1.05rem;
+  background:
+    radial-gradient(ellipse at 50% 115%, rgba(232, 173, 184, .28) 0%, rgba(232, 173, 184, 0) 55%),
+    radial-gradient(ellipse at 50% -20%, var(--night-3) 0%, var(--night-2) 48%, var(--night-1) 100%);
+  background-attachment: fixed, fixed;
   color: var(--ink);
   min-height: 100vh;
   line-height: 1.6;
@@ -75,11 +80,12 @@ body {
 }
 
 .hero h1 {
-  font-size: clamp(2.8rem, 8vw, 4.6rem);
-  font-weight: 500;
-  letter-spacing: .12em;
+  font-family: var(--script);
+  font-size: clamp(3.6rem, 11vw, 6rem);
+  font-weight: 400;
+  letter-spacing: .02em;
   color: var(--gold);
-  text-shadow: 0 0 40px rgba(212, 175, 106, .25);
+  text-shadow: 0 0 44px rgba(234, 199, 131, .45);
 }
 
 .hero h1::after {
@@ -193,29 +199,33 @@ main {
 .riddle-input {
   flex: 1 1 14rem;
   font-family: var(--serif);
-  font-size: 1.05rem;
-  padding: .65rem .9rem;
+  font-size: 1.1rem;
+  padding: .65rem 1.1rem;
   color: var(--ink);
-  background: rgba(0, 0, 0, .25);
-  border: 1px solid rgba(212, 175, 106, .3);
-  border-radius: 8px;
+  background: rgba(255, 255, 255, .09);
+  border: 1px solid rgba(234, 199, 131, .4);
+  border-radius: 999px;
   outline: none;
-  transition: border-color .3s;
+  transition: border-color .3s, background .3s;
 }
+
+.riddle-input:focus { background: rgba(255, 255, 255, .13); }
 
 .riddle-input:focus { border-color: var(--gold); }
 .riddle-input::placeholder { color: var(--ink-faint); font-style: italic; }
 
 .riddle-submit {
   font-family: var(--serif);
-  font-size: .95rem;
+  font-size: 1rem;
+  font-weight: 600;
   letter-spacing: .12em;
-  padding: .65rem 1.4rem;
-  color: var(--night-1);
+  padding: .65rem 1.6rem;
+  color: #2b2545;
   background: linear-gradient(135deg, var(--gold), var(--gold-soft));
   border: none;
-  border-radius: 8px;
+  border-radius: 999px;
   cursor: pointer;
+  box-shadow: 0 2px 14px rgba(234, 199, 131, .3);
   transition: transform .15s, box-shadow .3s;
 }
 
@@ -478,13 +488,16 @@ a.map-node:hover .map-marker {
 }
 
 .poem-page-title {
-  font-size: clamp(2rem, 6vw, 3.2rem) !important;
+  font-size: clamp(2.6rem, 9vw, 4.2rem) !important;
 }
 
 .poem-page-title.is-sealed-title {
-  color: var(--ink-faint);
+  font-family: var(--serif);
+  font-size: clamp(1.6rem, 5vw, 2.4rem) !important;
+  font-style: italic;
+  color: var(--ink-soft);
   text-shadow: none;
-  letter-spacing: .2em;
+  letter-spacing: .12em;
 }
 
 .poem-page {
@@ -679,9 +692,9 @@ a.map-node:hover .map-marker {
 /* ---------- texture papier & lettrine ---------- */
 .poem-page .poem {
   padding: 1.9rem 1.7rem;
-  border: 1px solid rgba(212, 175, 106, .14);
-  border-radius: 14px;
-  background-color: rgba(255, 255, 255, .022);
+  border: 1px solid rgba(234, 199, 131, .22);
+  border-radius: 16px;
+  background-color: rgba(255, 255, 255, .05);
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2'/%3E%3CfeColorMatrix values='0 0 0 0 1 0 0 0 0 0.95 0 0 0 0 0.8 0 0 0 0.035 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
 }
 
@@ -736,11 +749,11 @@ a.map-node:hover .map-marker {
 
 .const-name {
   margin-top: 1rem;
-  font-size: clamp(1.9rem, 6vw, 2.8rem);
-  font-style: italic;
-  letter-spacing: .14em;
+  font-family: var(--script);
+  font-size: clamp(2.6rem, 9vw, 3.8rem);
+  letter-spacing: .02em;
   color: var(--gold);
-  text-shadow: 0 0 34px rgba(212, 175, 106, .4);
+  text-shadow: 0 0 34px rgba(234, 199, 131, .5);
   animation: reveal 2s ease 4.5s both;
 }
 
