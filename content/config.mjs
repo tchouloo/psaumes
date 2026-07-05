@@ -24,11 +24,26 @@
 export const settings = {
   // Titre du site
   siteTitle: "Psaumes",
+  // Son prénom doux — le site s'adresse à elle (« bonsoir, Lathiri… »)
+  beloved: "Lathiri",
   // Dédicace affichée sur la page d'accueil
   dedication: "Onze textes. Onze clés. Chaque clé est un souvenir de nous.",
   // true  : les textes se déverrouillent dans l'ordre (un voyage)
   // false : elle peut essayer n'importe quel texte à tout moment
   sequential: true,
+
+  // Compte à rebours avant l'ouverture du recueil entier.
+  // null = ouvert tout de suite. Ex : "2026-07-20T20:00:00"
+  opensAt: null,
+
+  // Une porte par jour : la porte I s'ouvre ce jour-là, la II le lendemain…
+  // null = pas de rythme quotidien. Ex : "2026-07-20"
+  dailyFrom: null,
+
+  // Le vrai ciel du soir de votre rencontre : les étoiles brillantes sont
+  // dessinées à leur position réelle pour cette date, cette heure et ce lieu.
+  // null = ciel décoratif. ⚠️ EXEMPLE ci-dessous (Dakar) : mets VOTRE soir.
+  sky: { date: "2025-06-21T21:30:00", lat: 14.6928, lon: -17.4467 },
 };
 
 export const chapters = [

@@ -40,8 +40,25 @@ Les réponses sont tolérantes : majuscules, accents, espaces, tirets et
 ponctuation sont ignorés (`Saint-Louis` = `saint louis` = `SAINTLOUIS`).
 On peut accepter plusieurs réponses : `answers: ["14 février", "14/02"]`.
 
-Dans `settings`, `sequential: true` impose l'ordre (un vrai voyage) ;
-`false` laisse toutes les portes accessibles d'emblée.
+Dans `settings` :
+
+- `beloved` : son prénom — le site s'adresse à elle (« bonsoir, Lathiri… »)
+  et le signe dans la constellation finale
+- `sequential: true` impose l'ordre (un vrai voyage) ; `false` laisse
+  toutes les portes accessibles d'emblée
+- `opensAt` : date/heure d'ouverture du recueil — avant, un compte à
+  rebours (`null` = ouvert tout de suite)
+- `dailyFrom` : une porte par jour à partir de cette date (`null` = pas
+  de rythme quotidien)
+- `sky` : `{ date, lat, lon }` du soir de votre rencontre — les étoiles
+  brillantes sont dessinées à leur **vraie** position dans le ciel de ce
+  soir-là (`null` = ciel décoratif). ⚠️ L'exemple actuel pointe sur Dakar
+  à une date arbitraire : mets votre soir.
+
+Le site est aussi une **PWA** : sur son téléphone, « Ajouter à l'écran
+d'accueil » installe Psaumes comme une app (plein écran, hors ligne).
+
+La liste des idées et la feuille de route par release : voir `IDEES.md`.
 
 ## Tester en local
 

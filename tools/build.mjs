@@ -75,8 +75,12 @@ const out =
   JSON.stringify(
     {
       title: settings.siteTitle,
+      beloved: settings.beloved || "",
       dedication: settings.dedication,
       sequential: !!settings.sequential,
+      opensAt: settings.opensAt || null,
+      dailyFrom: settings.dailyFrom || null,
+      sky: settings.sky || null,
       iterations: ITERATIONS,
       chapters: payload,
     },
