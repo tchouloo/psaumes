@@ -314,6 +314,219 @@ main {
   color: var(--gold);
 }
 
+/* ---------- la carte du voyage ---------- */
+.hero-help {
+  margin-top: 1.1rem;
+  font-style: italic;
+  font-size: .95rem;
+  color: var(--ink-faint);
+}
+
+.map-wrap {
+  position: relative;
+  z-index: 1;
+  max-width: 40rem;
+  margin: 0 auto;
+  padding: 1rem 1rem 3rem;
+}
+
+#map {
+  position: relative;
+}
+
+.map-svg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+}
+
+.map-path-faint {
+  fill: none;
+  stroke: rgba(212, 175, 106, .22);
+  stroke-width: 1.5;
+  stroke-dasharray: 2 7;
+  stroke-linecap: round;
+}
+
+.map-path-lit {
+  fill: none;
+  stroke: var(--gold);
+  stroke-width: 1.5;
+  stroke-linecap: round;
+  filter: drop-shadow(0 0 6px rgba(212, 175, 106, .55));
+}
+
+/* le nœud est un ancrage de la taille du cercle, posé exactement sur le chemin ;
+   l'étiquette flotte à côté sans le décaler */
+.map-node {
+  position: absolute;
+  width: 52px;
+  height: 52px;
+  transform: translate(-50%, -50%);
+  text-decoration: none;
+  color: inherit;
+}
+
+.map-node .map-label {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.map-node.on-left .map-label { left: calc(100% + 1rem); }
+.map-node.on-right .map-label { right: calc(100% + 1rem); text-align: right; align-items: flex-end; }
+
+.map-marker {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: radial-gradient(circle at 35% 30%, var(--night-3), var(--night-1));
+  border: 1px solid rgba(212, 175, 106, .35);
+  box-shadow: 0 0 0 6px rgba(212, 175, 106, .05);
+  transition: box-shadow .4s, border-color .4s;
+}
+
+.map-marker-num {
+  font-size: .95rem;
+  letter-spacing: .1em;
+  color: var(--gold-soft);
+}
+
+.map-node.is-open .map-marker {
+  border-color: var(--gold);
+  box-shadow: 0 0 22px rgba(212, 175, 106, .45), 0 0 0 6px rgba(212, 175, 106, .08);
+}
+
+.map-node.is-open .map-marker-num { color: var(--gold); }
+
+.map-node.is-current .map-marker {
+  border-color: var(--gold);
+  animation: knock 2.4s ease-in-out infinite;
+}
+
+@keyframes knock {
+  0%, 100% { box-shadow: 0 0 8px rgba(212, 175, 106, .25), 0 0 0 4px rgba(212, 175, 106, .06); }
+  50%      { box-shadow: 0 0 26px rgba(212, 175, 106, .6), 0 0 0 10px rgba(212, 175, 106, .1); }
+}
+
+.map-node.is-far { opacity: .38; }
+
+a.map-node:hover .map-marker {
+  box-shadow: 0 0 30px rgba(212, 175, 106, .65), 0 0 0 10px rgba(212, 175, 106, .12);
+}
+
+.map-label {
+  display: flex;
+  flex-direction: column;
+  gap: .12rem;
+  width: max-content;
+  max-width: min(15rem, 38vw);
+}
+
+/* halo sombre derrière les textes pour rester lisible quand le chemin passe dessous */
+.map-label > span {
+  text-shadow:
+    0 0 6px var(--night-1), 0 0 6px var(--night-1),
+    0 0 12px var(--night-1), 0 0 12px var(--night-1),
+    0 0 20px var(--night-1);
+}
+
+.map-stage {
+  font-size: .68rem;
+  letter-spacing: .3em;
+  text-transform: uppercase;
+  color: var(--gold-soft);
+}
+
+.map-title {
+  font-size: 1.15rem;
+  font-style: italic;
+  color: var(--ink);
+  line-height: 1.25;
+}
+
+.map-title.is-cta {
+  color: var(--gold);
+  font-size: 1rem;
+}
+
+.map-title.is-sealed-note {
+  color: var(--ink-faint);
+  font-size: .95rem;
+}
+
+.map-note {
+  font-size: .85rem;
+  font-style: italic;
+  color: var(--ink-soft);
+  line-height: 1.35;
+}
+
+/* ---------- page d'un poème ---------- */
+.poem-hero { padding-top: 2.2rem; padding-bottom: 1.6rem; }
+
+.poem-topnav {
+  max-width: 44rem;
+  margin: 0 auto 2rem;
+  text-align: left;
+}
+
+.poem-page-title {
+  font-size: clamp(2rem, 6vw, 3.2rem) !important;
+}
+
+.poem-page-title.is-sealed-title {
+  color: var(--ink-faint);
+  text-shadow: none;
+  letter-spacing: .2em;
+}
+
+.poem-page {
+  position: relative;
+  z-index: 1;
+  max-width: 42rem;
+  margin: 0 auto;
+  padding: 0 1.25rem 2rem;
+}
+
+.poem-page .poem {
+  border-top: none;
+  margin-top: 0;
+  padding-top: 0;
+}
+
+.poem-bottomnav {
+  position: relative;
+  z-index: 1;
+  max-width: 42rem;
+  margin: 0 auto;
+  padding: 1rem 1.25rem 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  border-top: 1px dashed rgba(212, 175, 106, .25);
+}
+
+.nav-link {
+  font-style: italic;
+  font-size: .98rem;
+  color: var(--gold-soft);
+  text-decoration: none;
+  transition: color .3s;
+}
+
+.nav-link:hover { color: var(--gold); }
+.nav-link.is-center { letter-spacing: .2em; }
+
+.is-center { text-align: center; }
+
 /* ---------- pied de page ---------- */
 .footer {
   position: relative;
@@ -344,6 +557,16 @@ main {
   .chapter { padding: 1.2rem 1.1rem; }
   .chapter-head { flex-wrap: wrap; gap: .4rem .8rem; }
   .poem { font-size: 1.08rem; }
+
+  .map-node { width: 42px; height: 42px; }
+  .map-node.on-left .map-label { left: calc(100% + .65rem); }
+  .map-node.on-right .map-label { right: calc(100% + .65rem); }
+  .map-marker-num { font-size: .82rem; }
+  .map-label { max-width: 46vw; }
+  .map-stage { letter-spacing: .16em; font-size: .64rem; }
+  .map-title { font-size: 1rem; }
+  .map-title.is-cta { font-size: .92rem; }
+  .map-note { font-size: .8rem; }
 }
 
 @media (prefers-reduced-motion: reduce) {

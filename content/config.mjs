@@ -35,6 +35,8 @@ export const chapters = [
   // --------------------------------------------------------------- I
   {
     title: "Le courage d'aimer",
+    stage: "Le seuil",
+    mapNote: "Là où tout commence : oser le dire.",
     riddle: "Pour ouvrir ce recueil : quel est le prénom de celui qui t'écrit ?",
     hint: "Celui que tu prononces quand tu me cherches des yeux.",
     answers: ["EXEMPLE-MON-PRENOM"], // ⚠️ mets ton prénom ici
@@ -58,6 +60,8 @@ Toi qui nourris mon âme et qui éclaires mon cœur.`,
   // --------------------------------------------------------------- II
   {
     title: "La chute",
+    stage: "La chute",
+    mapNote: "Le jour où j'ai cessé de me tenir debout.",
     riddle: "Dans quelle ville nos regards se sont-ils croisés pour la première fois ?",
     hint: "Ferme les yeux. Tu y es encore.",
     answers: ["EXEMPLE-VILLE"], // ⚠️ ex : ["dakar"]
@@ -196,6 +200,8 @@ alors tu es la mienne.`,
   // --------------------------------------------------------------- III
   {
     title: "Parce que toi",
+    stage: "Le choix",
+    mapNote: "Je te choisis, encore et encore.",
     riddle: "Quel mois de l'année nous a réunis ?",
     hint: "Regarde nos premiers messages…",
     answers: ["EXEMPLE-MOIS"], // ⚠️ ex : ["septembre"]
@@ -227,6 +233,8 @@ Puissé-je baigner dans les mers infinies de ta célébration.`,
   // --------------------------------------------------------------- IV
   {
     title: "Soleil de mon âme",
+    stage: "L'aurore",
+    mapNote: "Ta lumière s'est levée sur mes jours.",
     riddle: "Quelle est ma couleur préférée ?",
     hint: "Celle que je porte quand je veux te plaire.",
     answers: ["EXEMPLE-COULEUR"], // ⚠️ ex : ["bleu", "bleu nuit"]
@@ -260,6 +268,8 @@ De ton âme plus pure que le zam-zam.`,
   // --------------------------------------------------------------- V
   {
     title: "La visiteuse",
+    stage: "La visite",
+    mapNote: "Quand tu frappes à ma porte.",
     riddle: "Quel est mon plat préféré, celui que je réclame toujours ?",
     hint: "Tu me taquines à chaque fois que j'en reprends…",
     answers: ["EXEMPLE-PLAT"], // ⚠️ ex : ["thieboudienne", "ceebu jen"]
@@ -277,6 +287,8 @@ Puisse-t-Il nous accorder de vivre, infiniment, de cet amour.`,
   // --------------------------------------------------------------- VI
   {
     title: "La légende",
+    stage: "La légende",
+    mapNote: "Ton nom, chanté parmi les mythes.",
     riddle: "Quel surnom je te donne quand nous sommes seuls ?",
     hint: "Il est dans ce recueil, quelque part…",
     answers: ["EXEMPLE-SURNOM"], // ⚠️ ex : ["leyla"]
@@ -307,6 +319,8 @@ Même si le récit de ta splendeur s’étend au-delà de toutes nos vies.`,
   // --------------------------------------------------------------- VII
   {
     title: "Beug naa la",
+    stage: "Le chant",
+    mapNote: "Dans la langue de mon cœur.",
     riddle: "Quelle est la chanson qui me fait penser à toi ?",
     hint: "Je te l'ai déjà envoyée. Peut-être plus d'une fois.",
     answers: ["EXEMPLE-CHANSON"], // ⚠️ ex : ["dieuleul", "beug nala"]
@@ -329,6 +343,8 @@ leer nga dafay miiss`,
   // --------------------------------------------------------------- VIII
   {
     title: "Comme une rose",
+    stage: "La rose",
+    mapNote: "Veiller sur toi, délicatement.",
     riddle: "Quel cadeau t'ai-je offert en premier ?",
     hint: "Tu l'as peut-être encore près de toi.",
     answers: ["EXEMPLE-CADEAU"], // ⚠️ ex : ["un parfum", "parfum"]
@@ -346,6 +362,8 @@ Avec la délicatesse de celui qui aime. »`,
   // --------------------------------------------------------------- IX
   {
     title: "Ta courbure",
+    stage: "Le manque",
+    mapNote: "Quand tu n'es pas là.",
     riddle: "Quelle date je garde précieusement dans mon cœur ?",
     hint: "Jour et mois suffisent. Le jour où tout a commencé.",
     answers: ["EXEMPLE-DATE"], // ⚠️ ex : ["14 février", "14/02"]
@@ -377,6 +395,8 @@ Que jamais ne cesse cette bénédiction que tu es pour moi, homme misérable.`,
   // --------------------------------------------------------------- X
   {
     title: "Au crépuscule",
+    stage: "L'éternité",
+    mapNote: "Aimer jusqu'au dernier souffle.",
     riddle: "Que rêvé-je de faire avec toi, plus tard, quand nous serons vieux ?",
     hint: "Je te l'ai confié un soir, à voix basse.",
     answers: ["EXEMPLE-REVE"], // ⚠️ ex : ["voyager", "faire le pèlerinage"]
@@ -423,6 +443,8 @@ Tu renaîtras en son infinie douceur.`,
   // --------------------------------------------------------------- XI
   {
     title: "Le jardin secret",
+    stage: "La dernière porte",
+    mapNote: "Ce qui n'appartient qu'à nous.",
     riddle: "Dernière porte, la plus intime. Où t'embrasserai-je en premier, le jour de nos retrouvailles ?",
     hint: "Là où bat ce qui m'appartient déjà.",
     answers: ["EXEMPLE-REPONSE"], // ⚠️ ex : ["le front", "front"]

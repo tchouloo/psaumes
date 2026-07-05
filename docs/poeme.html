@@ -11,21 +11,21 @@
 <body>
   <div class="stars" aria-hidden="true"></div>
 
-  <header class="hero">
-    <p class="hero-eyebrow">pour toi, seulement pour toi</p>
-    <h1 id="site-title">Psaumes</h1>
-    <p class="hero-dedication" id="site-dedication"></p>
-    <p class="hero-progress" id="site-progress"></p>
-    <p class="hero-help">Suis le chemin de notre histoire. Touche une étoile pour frapper à sa porte.</p>
+  <header class="hero poem-hero">
+    <nav class="poem-topnav">
+      <a class="nav-link" href="./">← la carte</a>
+    </nav>
+    <p class="hero-eyebrow" id="poem-stage"></p>
+    <h1 id="poem-title" class="poem-page-title"></h1>
+    <p class="hero-progress" id="poem-num"></p>
   </header>
 
-  <main class="map-wrap">
-    <div id="map" aria-label="Carte du voyage"></div>
-  </main>
+  <main id="poem-main" class="poem-page" aria-live="polite"></main>
+
+  <nav class="poem-bottomnav" id="poem-nav"></nav>
 
   <footer class="footer">
     <p>Écrit à la main, scellé avec des souvenirs.</p>
-    <button id="reset" class="reset-link" type="button" title="Tout verrouiller à nouveau">recommencer le voyage</button>
   </footer>
 
   <script src="assets/data.js"></script>

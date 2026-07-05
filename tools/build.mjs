@@ -60,6 +60,8 @@ const payload = chapters.map((ch, idx) => {
   return {
     n: idx + 1,
     title: ch.title,
+    stage: ch.stage || "Étape " + (idx + 1),
+    mapNote: ch.mapNote || "",
     riddle: ch.riddle,
     hint: ch.hint || "",
     locks: ch.answers.map((a) => encrypt(ch.text, a)),
