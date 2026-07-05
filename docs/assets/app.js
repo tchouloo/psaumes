@@ -230,11 +230,12 @@
         var y = cy - r * Math.cos(az);
         if (x < -10 || x > w + 10 || y < -10 || y > h + 10) return;
         var size = Math.min(3.1, Math.max(0.7, 2.7 - 0.5 * mag));
-        var alpha = Math.min(1, Math.max(0.3, 1.05 - 0.22 * mag));
+        var alpha = Math.min(0.85, Math.max(0.22, 0.9 - 0.18 * mag));
+        // encre dorée sur papier, comme une carte d'astronome
         ctx.beginPath();
-        ctx.fillStyle = "rgba(245, 236, 210, " + alpha.toFixed(2) + ")";
-        ctx.shadowColor = "rgba(212, 175, 106, .8)";
-        ctx.shadowBlur = size * 3;
+        ctx.fillStyle = "rgba(168, 129, 58, " + alpha.toFixed(2) + ")";
+        ctx.shadowColor = "rgba(207, 169, 94, .55)";
+        ctx.shadowBlur = size * 2.5;
         ctx.arc(x, y, size, 0, Math.PI * 2);
         ctx.fill();
       });

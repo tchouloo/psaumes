@@ -2,7 +2,7 @@
    Stratégie : réseau d'abord (pour que les mises à jour arrivent tout de
    suite), cache en secours (pour que le recueil s'ouvre même hors ligne). */
 
-var VERSION = "psaumes-v2";
+var VERSION = "psaumes-v3";
 var SHELL = [
   "./",
   "index.html",
