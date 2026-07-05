@@ -713,6 +713,20 @@
         }
       });
 
+      // Mode aperçu : ?apercu=compte ou ?apercu=constellation permettent de
+      // prévisualiser ces rendus sans configurer de date ni tout déverrouiller.
+      var apercu = new URLSearchParams(location.search).get("apercu");
+      if (apercu === "compte") {
+        document.getElementById("site-progress").textContent = "aperçu — démonstration";
+        renderCountdownVeil(new Date(Date.now() + 3 * 86400000 + 4 * 3600000 + 30 * 60000));
+        return;
+      }
+      if (apercu === "constellation") {
+        document.getElementById("site-progress").textContent = "aperçu — démonstration";
+        renderConstellation(document.querySelector(".map-wrap"));
+        return;
+      }
+
       var opensAt = siteOpensAt();
       if (opensAt && opensAt.getTime() > Date.now()) {
         document.getElementById("site-progress").textContent = "";
