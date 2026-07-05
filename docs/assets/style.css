@@ -777,6 +777,14 @@ a.map-node:hover .map-marker {
 
 .reset-link:hover { opacity: 1; }
 
+.version {
+  margin-top: .8rem;
+  font-size: .68rem;
+  letter-spacing: .25em;
+  color: var(--ink-faint);
+  opacity: .5;
+}
+
 @media (max-width: 480px) {
   .chapter { padding: 1.2rem 1.1rem; }
   .chapter-head { flex-wrap: wrap; gap: .4rem .8rem; }
